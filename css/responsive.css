@@ -1,0 +1,594 @@
+/* ============================================================
+   DEVZENITH — Responsive Breakpoints
+   Mobile-first approach. All overrides for smaller viewports.
+   ============================================================ */
+
+/* ============================================================
+   MOBILE NAVIGATION (≤768px)
+   ============================================================ */
+@media (max-width: 768px) {
+  .nav__links {
+    display: none;
+  }
+
+  .nav__auth {
+    display: none;
+  }
+
+  .nav__toggle {
+    display: flex;
+  }
+
+  .nav__user-name {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav__toggle {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none !important;
+  }
+}
+
+/* ============================================================
+   HERO (≤1024px → ≤768px → ≤480px)
+   ============================================================ */
+@media (max-width: 1024px) {
+  .hero__stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--nav-height) + var(--space-12));
+    padding-bottom: var(--space-12);
+  }
+
+  .hero__title {
+    font-size: var(--text-4xl);
+  }
+
+  .hero__subtitle {
+    font-size: var(--text-base);
+  }
+
+  .hero__meta {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .hero__meta-divider {
+    display: none;
+  }
+
+  .hero__cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__cta .btn {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero__stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    margin-top: var(--space-10);
+    padding-top: var(--space-8);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: var(--text-3xl);
+  }
+
+  .hero__stats {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  .hero__stat-value {
+    font-size: var(--text-2xl);
+  }
+}
+
+/* ============================================================
+   CONFERENCE PULSE
+   ============================================================ */
+@media (max-width: 768px) {
+  .pulse {
+    padding-block: var(--space-6);
+  }
+
+  .pulse__track {
+    font-size: var(--text-xs);
+    gap: var(--space-6);
+  }
+}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+@media (max-width: 768px) {
+  .section {
+    padding-block: var(--space-12);
+  }
+
+  .section--lg {
+    padding-block: var(--space-16);
+  }
+
+  .section__header {
+    margin-bottom: var(--space-8);
+  }
+
+  .section__title {
+    font-size: var(--text-2xl);
+  }
+}
+
+/* ============================================================
+   GRIDS
+   ============================================================ */
+@media (max-width: 1024px) {
+  .grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid--2,
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   EVENT GRID
+   ============================================================ */
+@media (max-width: 1024px) {
+  .grid--events {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .grid--events {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+/* ============================================================
+   FEATURED EVENTS GRID (Homepage)
+   ============================================================ */
+@media (max-width: 1024px) {
+  .featured-events__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .featured-events__grid > *:first-child {
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .featured-events__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   CATEGORIES GRID
+   ============================================================ */
+@media (max-width: 768px) {
+  .categories-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: var(--space-3);
+  }
+}
+
+@media (max-width: 480px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================================
+   VALUES GRID (Why DevZenith)
+   ============================================================ */
+@media (max-width: 768px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+/* ============================================================
+   FEATURE TEASER (My Festival / Pass preview)
+   ============================================================ */
+@media (max-width: 1024px) {
+  .feature-teaser {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .feature-teaser[style*="direction: rtl"] {
+    direction: ltr !important;
+  }
+
+  .feature-teaser[style*="direction: rtl"] > * {
+    direction: ltr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-teaser__preview {
+    max-width: 400px;
+  }
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+@media (max-width: 768px) {
+  .final-cta {
+    padding-block: var(--space-16);
+  }
+
+  .final-cta__title {
+    font-size: var(--text-3xl);
+  }
+
+  .final-cta__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .final-cta__actions .btn {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* ============================================================
+   EVENTS PAGE — TOOLBAR
+   ============================================================ */
+@media (max-width: 768px) {
+  .events-header {
+    padding-top: calc(var(--nav-height) + var(--space-6));
+  }
+
+  .events-header__title {
+    font-size: var(--text-3xl);
+  }
+
+  .events-toolbar {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .search-wrapper {
+    min-width: 100%;
+  }
+
+  .search-wrapper__shortcut {
+    display: none;
+  }
+
+  .filter-bar {
+    padding-bottom: var(--space-1);
+  }
+}
+
+/* ============================================================
+   EVENT DETAIL PAGE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .event-detail__layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .event-detail__sidebar {
+    position: static;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .event-detail {
+    padding-top: calc(var(--nav-height) + var(--space-6));
+  }
+
+  .event-detail__title {
+    font-size: var(--text-3xl);
+  }
+
+  .event-detail__related .grid--events {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   AUTH PAGES
+   ============================================================ */
+@media (max-width: 480px) {
+  .auth-page {
+    padding: var(--space-4);
+    padding-top: calc(var(--nav-height) + var(--space-4));
+    align-items: flex-start;
+  }
+
+  .auth-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+  }
+}
+
+/* ============================================================
+   DASHBOARD
+   ============================================================ */
+@media (max-width: 768px) {
+  .dash {
+    padding-top: calc(var(--nav-height) + var(--space-6));
+  }
+
+  .dash__welcome {
+    font-size: var(--text-2xl);
+  }
+
+  .dash__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dash__tabs {
+    gap: 0;
+    margin-bottom: var(--space-6);
+  }
+
+  .dash__tab {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-xs);
+  }
+
+  .reg-item {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .reg-item__actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .dash__stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   PLANNER
+   ============================================================ */
+@media (max-width: 768px) {
+  .planner__event {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .planner__time {
+    min-width: auto;
+  }
+
+  .planner__event-actions {
+    justify-content: flex-start;
+  }
+}
+
+/* ============================================================
+   CONFERENCE PASS
+   ============================================================ */
+@media (max-width: 480px) {
+  .pass {
+    width: 100%;
+  }
+
+  .pass__fields {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .pass-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+@media (max-width: 1024px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer__col--brand {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .footer__col--brand {
+    grid-column: span 1;
+  }
+
+  .footer {
+    padding-top: var(--space-10);
+  }
+}
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+@media (max-width: 480px) {
+  .toast-container {
+    top: var(--space-4);
+    right: var(--space-4);
+    left: var(--space-4);
+  }
+
+  .toast {
+    min-width: auto;
+    max-width: none;
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+@media (max-width: 480px) {
+  .modal {
+    width: 95vw;
+    max-height: 90vh;
+    border-radius: var(--radius-lg);
+  }
+
+  .modal__header {
+    padding: var(--space-4);
+  }
+
+  .modal__body {
+    padding: var(--space-4);
+  }
+
+  .modal__footer {
+    padding: var(--space-3) var(--space-4);
+    flex-direction: column;
+  }
+
+  .modal__footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================================
+   BUTTONS — Touch targets
+   ============================================================ */
+@media (max-width: 768px) {
+  .btn {
+    min-height: 44px;
+  }
+
+  .btn--sm {
+    min-height: 36px;
+  }
+
+  .btn--lg {
+    min-height: 48px;
+  }
+}
+
+/* ============================================================
+   FORM CONTROLS — Touch targets
+   ============================================================ */
+@media (max-width: 768px) {
+  .form-input,
+  .form-select,
+  .form-textarea {
+    min-height: 44px;
+    font-size: 16px; /* Prevents iOS zoom */
+  }
+}
+
+/* ============================================================
+   CONTAINER PADDING
+   ============================================================ */
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 1rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --container-padding: 1.25rem;
+  }
+}
+
+/* ============================================================
+   REGISTRATION PAGE
+   ============================================================ */
+@media (max-width: 768px) {
+  #reg-event-info {
+    margin-bottom: var(--space-6) !important;
+  }
+}
+
+/* ============================================================
+   PULSE ANIMATION — continuous scroll
+   ============================================================ */
+.pulse__track {
+  animation: pulse-scroll 30s linear infinite;
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse__track {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+  .nav,
+  .mobile-nav,
+  .footer,
+  .toast-container,
+  .modal-overlay,
+  .skip-link,
+  .btn:not(.pass__download),
+  .theme-toggle,
+  .nav__toggle {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .pass {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+
+  .section {
+    padding-block: 2rem;
+  }
+}

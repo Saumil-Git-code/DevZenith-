@@ -1,0 +1,336 @@
+/* ============================================================
+   DEVZENITH — Base Styles
+   Modern reset, global defaults, utility classes.
+   ============================================================ */
+
+/* --- Modern Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  hanging-punctuation: first last;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color var(--duration-normal) var(--ease-out),
+              color var(--duration-normal) var(--ease-out);
+}
+
+/* --- Element Defaults --- */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+p {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+strong, b {
+  font-weight: var(--weight-semibold);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* --- Selection --- */
+::selection {
+  background-color: var(--color-accent-subtle);
+  color: var(--color-text-primary);
+}
+
+/* --- Focus --- */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* --- Skip to Content --- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  border-radius: var(--radius-md);
+  z-index: var(--z-tooltip);
+  transition: top var(--duration-fast) var(--ease-out);
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+/* ============================================================
+   LAYOUT UTILITIES
+   ============================================================ */
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+.container--wide {
+  max-width: var(--container-wide);
+}
+
+/* Sections */
+.section {
+  padding-block: var(--space-20);
+  position: relative;
+}
+
+.section--lg {
+  padding-block: var(--space-24);
+}
+
+.section--sm {
+  padding-block: var(--space-12);
+}
+
+.section--flush {
+  padding-block: 0;
+}
+
+.section--alt {
+  background-color: var(--color-bg-secondary);
+}
+
+/* Section header */
+.section__header {
+  margin-bottom: var(--space-12);
+}
+
+.section__header--center {
+  text-align: center;
+}
+
+.section__header--center .section__subtitle {
+  margin-inline: auto;
+}
+
+.section__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--color-accent);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  margin-bottom: var(--space-3);
+}
+
+.section__eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.section__title {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.section__subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  max-width: 600px;
+}
+
+/* ============================================================
+   GRID UTILITIES
+   ============================================================ */
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--events {
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--space-6);
+}
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+.font-display { font-family: var(--font-display); }
+.font-body { font-family: var(--font-body); }
+.font-mono { font-family: var(--font-mono); }
+
+.text-2xs { font-size: var(--text-2xs); }
+.text-xs { font-size: var(--text-xs); }
+.text-sm { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg { font-size: var(--text-lg); }
+.text-xl { font-size: var(--text-xl); }
+.text-2xl { font-size: var(--text-2xl); }
+.text-3xl { font-size: var(--text-3xl); }
+.text-4xl { font-size: var(--text-4xl); }
+.text-5xl { font-size: var(--text-5xl); }
+.text-6xl { font-size: var(--text-6xl); }
+
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-muted { color: var(--color-text-muted); }
+.text-accent { color: var(--color-accent); }
+
+.weight-light { font-weight: var(--weight-light); }
+.weight-regular { font-weight: var(--weight-regular); }
+.weight-medium { font-weight: var(--weight-medium); }
+.weight-semibold { font-weight: var(--weight-semibold); }
+.weight-bold { font-weight: var(--weight-bold); }
+
+/* ============================================================
+   VISIBILITY UTILITIES
+   ============================================================ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ============================================================
+   SEPARATORS
+   ============================================================ */
+.divider {
+  height: 1px;
+  background: var(--color-border);
+  border: none;
+  margin-block: var(--space-8);
+}
+
+.divider--sm {
+  margin-block: var(--space-4);
+}
+
+/* ============================================================
+   BODY STATES
+   ============================================================ */
+body.modal-open {
+  overflow: hidden;
+  padding-right: var(--scrollbar-width, 0);
+}
+
+/* ============================================================
+   ANIMATION REVEAL DEFAULTS
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--duration-reveal) var(--ease-out),
+              transform var(--duration-reveal) var(--ease-out);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.reveal-stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger > .reveal:nth-child(2) { transition-delay: 80ms; }
+.reveal-stagger > .reveal:nth-child(3) { transition-delay: 160ms; }
+.reveal-stagger > .reveal:nth-child(4) { transition-delay: 240ms; }
+.reveal-stagger > .reveal:nth-child(5) { transition-delay: 320ms; }
+.reveal-stagger > .reveal:nth-child(6) { transition-delay: 400ms; }
+.reveal-stagger > .reveal:nth-child(7) { transition-delay: 480ms; }
+.reveal-stagger > .reveal:nth-child(8) { transition-delay: 560ms; }
